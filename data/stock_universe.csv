@@ -1,0 +1,31 @@
+ticker,company_name,sector,market_cap
+ALPH,Alpha Technologies,Technology,85000
+NOVA,Nova Systems,Technology,72000
+CYBR,CyberNet Solutions,Technology,68000
+CLOUD,CloudCore Technologies,Technology,61000
+INFX,Infinix Software,Technology,54000
+FINX,FinX Financial Services,Financials,90000
+PRIM,Prime Capital,Financials,78000
+INVB,InvestBank Holdings,Financials,65000
+PAYM,PayMax Services,Financials,48000
+SAFE,SafeGuard Insurance,Financials,42000
+HLTH,HealthFirst Pharma,Healthcare,75000
+MEDI,Medicare Solutions,Healthcare,58000
+BIOT,BioTech Innovations,Healthcare,46000
+LIFE,LifeCare Hospitals,Healthcare,39000
+CURE,CureWell Laboratories,Healthcare,35000
+ENRG,EnergyCore Limited,Energy,82000
+SOLR,SolarEdge Energy,Energy,53000
+WIND,WindPower Corporation,Energy,44000
+OILX,OilMax Industries,Energy,70000
+POWR,PowerGrid Solutions,Energy,60000
+RETL,RetailMart Limited,Consumer,55000
+FOOD,FoodWorld Brands,Consumer,47000
+LUXE,Luxe Lifestyle,Consumer,38000
+AUTO,AutoDrive Motors,Consumer,63000
+HOME,HomeComfort Products,Consumer,41000
+INDU,IndustrialWorks,Industrials,67000
+MACH,MachTech Manufacturing,Industrials,52000
+LOGI,LogisticsPro,Industrials,45000
+CHEM,ChemCore Industries,Materials,59000
+MINE,MineWorks Resources,Materials,43000
