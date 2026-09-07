@@ -4,8 +4,11 @@
 
 Custom Index Builder is a web-based application that allows users to create and analyse a custom Price Return Equity Index using a predefined universe of 30 dummy stocks.
 
-Users can select one or more stocks, choose a weighting methodology, select a date range, and generate a custom index starting with a base value of 100.
+Users can select one or more stocks, choose a weighting methodology, select a date range, and generate a custom index starting with a base value of 100.'
 
+The deployed Streamlit application is available here:
+
+https://custom-index-builder-iq8mvfszmu8a3gb7mkhxdy.streamlit.app/
 ---
 
 ## Features
