@@ -75,7 +75,7 @@ st.sidebar.header("⚙️ Index Configuration")
 selected_stocks = st.sidebar.multiselect(
     "Select Stocks",
     options=universe["ticker"].tolist(),
-    default=universe["ticker"].tolist()[:12]
+    default=universe["ticker"].tolist()[:10]
 )
 
 

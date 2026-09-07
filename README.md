@@ -169,3 +169,76 @@ Users can also download the index results as a CSV file.
 
 ```bash
 git clone https://github.com/sarthak0630-cyber/custom-index-builder.git
+cd custom-index-builder
+```
+
+### 2. Install Dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 3. Generate Dummy Data (Optional)
+
+The repository already includes generated CSV files. To regenerate them:
+
+```bash
+python data_generator.py
+```
+
+This creates or replaces `data/stock_universe.csv` and `data/stock_prices.csv`.
+
+### 4. Start the Application
+
+```bash
+streamlit run app.py
+```
+
+Streamlit will provide a local URL that can be opened in a web browser.
+
+## Data Format
+
+### `data/stock_universe.csv`
+
+Contains 30 rows, one for each dummy stock:
+
+| Column | Description |
+| --- | --- |
+| `ticker` | Unique stock identifier |
+| `company_name` | Dummy company name |
+| `sector` | Sector or industry label |
+| `market_cap` | Numeric value used for market-cap weighting |
+
+### `data/stock_prices.csv`
+
+Contains one row per stock per business date:
+
+| Column | Description |
+| --- | --- |
+| `date` | Trading date |
+| `ticker` | Stock identifier matching the universe file |
+| `close_price` | Dummy daily closing price |
+
+The included data covers business days from January 1, 2024 through December 31, 2025. Prices are simulated and are reproducible because the generator uses a fixed random seed.
+
+## Assumptions
+
+- Only available business dates are used; weekends and public holidays are not modelled separately.
+- The selected stocks are held with static weights for the full calculation period.
+- The index is a price return index, so dividends and other distributions are excluded.
+- If a price is missing, the app forward-fills from the most recent available observation and removes any rows that still contain missing values.
+- The first return observation is excluded because it has no prior closing price.
+
+## Limitations and Future Improvements
+
+- The stock universe and prices are dummy data and are not suitable for investment decisions.
+- The app currently supports equal weighting and market-cap weighting only.
+- Market-cap weights do not rebalance during the selected date range.
+- The calculation does not include dividends, transaction costs, taxes, corporate actions, or index rebalancing rules.
+- Future improvements could include custom user-defined weights, configurable rebalancing dates, dividend-adjusted total returns, stronger data-quality checks, and automated tests for the calculation logic.
+
+## Git Workflow
+
+The project was developed through multiple commits, including an initial implementation, documentation updates, and an index enhancement branch. The repository is available on GitHub at:
+
+https://github.com/sarthak0630-cyber/custom-index-builder
