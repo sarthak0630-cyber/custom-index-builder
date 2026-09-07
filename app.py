@@ -481,6 +481,14 @@ if generate_index:
         display_levels.tail(10),
         use_container_width=True
     )
+    csv = display_levels.to_csv(index=False).encode("utf-8")
+
+    st.download_button(
+        label="Download Index Results as CSV",
+        data=csv,
+        file_name="custom_index_results.csv",
+        mime="text/csv"
+    )
 
 
     # --------------------------------------------------
