@@ -324,12 +324,16 @@ if generate_index:
 
     BASE_VALUE = 100
 
+    # Calculate index levels from daily index returns
+    index_levels = BASE_VALUE * (1 + index_returns).cumprod()
 
-    index_levels = (
-        BASE_VALUE
-        *
-        (1 + index_returns).cumprod()
-    )
+    # Explicitly include the base value of 100 at the start
+    base_date = index_levels.index[0] - pd.Timedelta(days=1)
+
+    index_levels = pd.concat([
+        pd.Series([BASE_VALUE], index=[base_date]),
+        index_levels
+    ])
 
 
     # ==================================================
@@ -473,7 +477,7 @@ if generate_index:
     display_levels = pd.DataFrame({
         "Date": index_levels.index,
         "Index Level": index_levels.values,
-        "Daily Return (%)": index_returns.values * 100
+        "Daily Return (%)": [None] + (index_returns.values * 100).tolist()
     })
 
 
